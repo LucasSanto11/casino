@@ -1,4 +1,4 @@
-#message de bienvenue sur le jeux + animation
+print("Bienvenue au Blackjack")#message de bienvenue sur le jeux + animation après#
 sous = [0]
 def miser(sous):
     if sous > 0 and sous <= 300:
