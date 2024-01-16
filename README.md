@@ -8,3 +8,4 @@
 - mettre tout dans une interface
 - inclure les choix du joueur
 - fin de la partie (gains, pertes)
+- le croupier
