@@ -7,7 +7,7 @@ def miser(sous):
         print("Vous ne pouvez pas miser plus de 300 €")
 sous = int(input("Combien d'euros souhaitez-vous miser ? "))
 miser(sous)
-#fonction permettant de donner une mise #(voir à la fin de la partie gains/pertes
+#fonction permettant de donner une mise #(voir à la fin de la partie gains/pertes)
 
 import random
 
