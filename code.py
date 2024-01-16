@@ -1,3 +1,14 @@
+#message de bienvenue sur le jeux + animation
+sous = [0]
+def miser(sous):
+    if sous > 0 and sous <= 300:
+        return sous
+    else:
+        print("Vous ne pouvez pas miser plus de 300 €")
+sous = int(input("Combien d'euros souhaitez-vous miser ? "))
+miser(sous)
+#fonction permettant de donner une mise #(voir à la fin de la partie gains/pertes
+
 import random
 
 cartes=['As', 'Deux', 'Trois', 'Quatre', 'Cinq', 'Six', 'Sept', 'Huit', 'Neuf', 'Dix', 'Valet', 'Dame', 'Roi']
