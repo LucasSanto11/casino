@@ -9,6 +9,7 @@ sous = int(input("Combien d'euros souhaitez-vous miser ? "))
 miser(sous)#16/01/2024
 #fonction permettant de donner une mise #(voir à la fin de la partie gains/pertes)
 
+
 import random
 
 cartes=['As', 'Deux', 'Trois', 'Quatre', 'Cinq', 'Six', 'Sept', 'Huit', 'Neuf', 'Dix', 'Valet', 'Dame', 'Roi']
@@ -38,3 +39,8 @@ for i in range(20):
     valeur=(tirage())
     points+=valeur
 print("Vous avez", points, "points")
+
+
+
+print("à vous de jouer")
+#à la fin de la fonction croupier demander au joueur de jouer
