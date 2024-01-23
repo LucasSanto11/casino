@@ -1,4 +1,4 @@
-print("Bienvenue au Blackjack") #message de bienvenue sur le jeux + animation après
+ueprint("Bienvenue au Blackjack") #message de bienvenue sur le jeux + animation après
 sous = 0
 valeur=0
 points=0
@@ -65,7 +65,7 @@ def rejeu():
         points+=valeur
         if points<21:
             print("Vous avez", points, "points")
-            rejeu()
+            newgame()
         elif points>21:
             print("Vous avez", points, "points, vous avez dépassé 21 points")
             newgame()
@@ -74,24 +74,22 @@ def rejeu():
             newgame()
 
     else:
-        print("à faire")
+        if valeur_joueur<valeur_croupier:
+             print ('Oh mince, vous avez perdu votre mise, vous n*avez plus rien !')
+        else :
+             sous=2*sous
+             print('Bravo, vous avez gagné :) ! Votre mise est maintenant de', sous,'!')
+         rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON' ")
+         if rep=='OUI' :
+                 print('On relance une partie alors!')
+                 nouvelle_part=rnewgame()
+          elif rep=='NON':
+                 print('A bientôt! :)')
+          else :
+               rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON'")    
 
-def result_partie(valeur_joueur, valeur_croupier):#renvoie si le joueur a gagné ou non, sa mise et lui demande s'il veut r
 
-    if valeur_joueur<valeur_croupier:
-        print ('Oh mince, vous avez perdu votre mise, vous n*avez plus rien !')
-
-    else :
-        sous=2*sous
-        print('Bravo, vous avez gagné :) ! Votre mise est maintenant de', sous,'!')
-    rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON' ")
-    if rep=='OUI' :
-            print('On relance une partie alors!')
-            nouvelle_part=rejeu()
-    elif rep=='NON':
-            print('A bientôt! :)')
-    else :
-        rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON'")
+    
 
 
 for i in range(2):
