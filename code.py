@@ -26,7 +26,7 @@ def tirage():
     print("Vous avez", points, "points.")
     if rand1==0 and 11+points<21: #si on tire un as et que nb points + 11 est inférieur à 21
         valeur=int(input("Choisir une valeur entre 1 et 11"))
-        while valeur!=1:
+        while valeur!=1 and valeur!=11:
             valeur=0
             valeur=int(input("Choisir une valeur entre 1 et 11"))
     else:
@@ -34,6 +34,26 @@ def tirage():
     carte=cartes[rand1] + symbole[rand2]
     print(carte)
     return valeur
+
+def newgame():
+    global points
+    global valeur
+    print("Voulez vous relancer une partie ?")
+    rep1=input("Oui/non")
+    while rep1.lower()!="oui" and "non":
+        rep1=input("Oui/non")
+
+    if rep1.lower()=="oui":
+        points=0
+        valeur=0
+        print("Nouvelle partie, vous avez 0 points")
+        valeur=(tirage())
+        points+=valeur
+        print("Vous avez", points, "points")
+        rejeu()
+
+    elif rep1.lower()=="non":
+        print("Merci d'avoir joué.")
 
 
 def rejeu():
@@ -48,7 +68,10 @@ def rejeu():
             rejeu()
         elif points>21:
             print("Vous avez", points, "points, vous avez dépassé 21 points")
-            print("Voulez vous relancer une partie ?")
+            newgame()
+        elif points==21:
+            print("Vous avez", points, "points, vous avez gagné")
+            newgame()
 
     else:
         print("à faire")
