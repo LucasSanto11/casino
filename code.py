@@ -76,9 +76,25 @@ def rejeu():
     else:
         print("à faire")
 
+def result_partie(valeur_joueur, valeur_croupier):#renvoie si le joueur a gagné ou non, sa mise et lui demande s'il veut r
 
-for i in range(1):
+    if valeur_joueur<valeur_croupier:
+        print ('Oh mince, vous avez perdu votre mise, vous n*avez plus rien !')
+
+    else :
+        sous=2*sous
+        print('Bravo, vous avez gagné :) ! Votre mise est maintenant de', sous,'!')
+    rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON' ")
+    if rep=='OUI' :
+            print('On relance une partie alors!')
+            nouvelle_part=rejeu()
+    elif rep=='NON':
+            print('A bientôt! :)')
+    else :
+        rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON'")
+
+
+for i in range(2):
     valeur=(tirage())
     points+=valeur
 print("Vous avez", points, "points")
-rejeu()
