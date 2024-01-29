@@ -96,3 +96,31 @@ for i in range(2):
     valeur=(tirage())
     points+=valeur
 print("Vous avez", points, "points")
+
+def croupier_coup():
+    global points
+    valeur=(tirage())
+    points+=valeur
+
+    if points<21:
+        print("J'ai", points, "points, dit le croupier")
+
+    elif points>21:
+        print("J'ai dépassé le nombre de", points, "points, vous avez gagné, dit le croupier")
+        print("Voulez vous relancer une partie ?")
+#Si le croupier tire des cartes et que la valeur de sa main dépasse 21, il perd automatiquement la partie, et tous les joueurs restants encore en jeu gagnent.
+
+
+    if valeur == rand1 and points>=17:#Si le croupier reçoit une main contenant un As et un total de 17 points ou plus, il doit également s'arrêter de tirer des cartes (appelé "soft 17 rule").
+
+        print("Vous avez gagné")#importer la fonction qui fructifie la mise
+        print("Voulez vous relancer une partie ?")
+        break
+    print("A votre tour de jouer")
+    rejeu()
+#il faut mettre une fonction arrêt pour que joueur et croupier compare leurs cartes et se départage
+
+croupier_coup()
+#Si la main du croupier a une valeur supérieure à celle du joueur, le croupier remporte la mise du joueur. Si la main du joueur a une valeur supérieure à celle du croupier, le joueur gagne la mise. En cas d'égalité (main de même valeur), c'est un "push", le joueur récupère sa mise initiale sans gagner ni perdre.
+#29/01/2024 ben
+
