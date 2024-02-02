@@ -33,9 +33,8 @@ def tirage_croupier(): #finir + faire en sorte qu'il perde si il tire un as avec
     val=[As, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     rand1=random.randint(0, 12)
     rand2=random.randint(0, 3)
-    if: points_croupier>=17: #Si le croupier a 17 points, il ne tire plus de cartes
-        #aucune action du croupier
-
+    if points_croupier>=17: #Si le croupier a 17 points, il ne tire plus de cartes
+        print('')
     else: #Si le croupier a moins de 17 points, il tire une carte
         if rand1==0 and 11+points<21: #si on tire un as et que nb points + 11 est inférieur à 21
             if random.randint(1,2) == 1: #choisit aléatoirement une valeur pour l'as
@@ -47,9 +46,9 @@ def tirage_croupier(): #finir + faire en sorte qu'il perde si il tire un as avec
         else:
             valeur=val[rand1]
         carte=cartes[rand1] + symbole[rand2]
+        points_croupier+=valeur
         print("////////")
         print("Le croupier a tiré:", carte)
-        points_croupier+=valeur
         print("Le croupier a", points_croupier, "points.")
         print("////////")
         print('')
@@ -130,7 +129,7 @@ def rejeu():
         if points<points_croupier: #Si le joueur a moins de points que le croupier
              print ('Oh mince, vous avez perdu votre mise, vous n*avez plus rien !')
         else : #Si le joueur a plus de points que le croupier
-             sous=2*sous
+             #sous=2*sous
              print('Bravo, vous avez gagné :) ! Votre mise est maintenant de', sous,'!')
 
         rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON' ") #Le joueur choisit si il veut relancer
