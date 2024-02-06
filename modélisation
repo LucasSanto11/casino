@@ -21,3 +21,33 @@ while running:
             running = False
 #j'ai la photo
 
+#image "superposé"
+affichage_de_devant = pygame.image.load('ressource/START3.png').convert_alpha()
+affichage_de_devant = pygame.transform.scale(banner, (300, 250))
+
+#vérifier si le jeux est en marche
+if game.is_playing:
+    game.update(screen)
+#vérifie si le jeux n'est pas comencé
+else:
+    screen.blit(affichage_de_devant, (50, 150))
+    pygame.display.flip()
+clock.tick(60)
+
+#les boutons
+if event.key == pygame.#le boutton tirer:
+    rep.lower()=="tirer"
+elif event.key == pygame.#le boutton rester:
+    rep.lower()=="rester"
+
+#pour le son
+from sound import Sound
+
+class Sound:
+
+    def _init_(self):
+        self.music = pygame.mixer_music.load("#audio")
+        self.music_volume = pygame.mixer.music.set_volume(0.25)
+        self.music_play = pygame.mixer.music.play(loops=-1)
+        self.sound_volume()
+        self.music = Sound()
