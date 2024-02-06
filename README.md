@@ -14,3 +14,8 @@ Fait:
 - système de points
 - faire un tour par tour
 - choix de relancer une partie & tirer une carte
+- Gagner dès les 2 premiers tirages
+
+
+Liens utiles:
+- Vidéo dans pygame: https://stackoverflow.com/questions/21356439/how-to-load-and-play-a-video-in-pygame
