@@ -151,3 +151,27 @@ for i in range(2):
     valeur=(tirage())
     points+=valeur
 rejeu()
+
+#PARTIE PYGAME ////////////////////////
+import pygame
+
+pygame.init()
+
+pygame.display.set_caption("SpaceA")
+
+screen = pygame.display.set_mode((1280,720))
+
+background = pygame.image.load("images\bj.png")
+
+background.convert()
+
+running = True
+
+while running:
+    screen.blit(background, (0,0))
+    pygame.display.flip()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT :
+            running = False
+#j'ai la photo
