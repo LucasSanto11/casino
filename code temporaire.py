@@ -24,9 +24,15 @@ cartes=['As', 'Deux', 'Trois', 'Quatre', 'Cinq', 'Six', 'Sept', 'Huit', 'Neuf', 
 symbole=[' de Pique', ' de Carreaux', ' de Coeur', " de Trèfle"]
 random.randint(0, 12)
 
+def demande_rejeu():
+    rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON' ")
+    if rep.upper()=='OUI' :
+            print('On relance une partie alors!')
+            newgame()
+    elif rep.upper()=='NON':
+            print('A bientôt! :)')
 
-
-def tirage_croupier(): #finir + faire en sorte qu'il perde si il tire un as avec + de 17 points
+def tirage_croupier(): #le croupier tire 
     global points_croupier
     global valeur
     valeur=0
@@ -35,8 +41,12 @@ def tirage_croupier(): #finir + faire en sorte qu'il perde si il tire un as avec
     rand2=random.randint(0, 3)
     if points_croupier>=17: #Si le croupier a 17 points, il ne tire plus de cartes
         print('')
+    elif points_croupier==21:
+        print('le croupier a obtenu 21 points, vous avez perdu votre mise ;(')
+        demande_rejeu()
+
     else: #Si le croupier a moins de 17 points, il tire une carte
-        if rand1==0 and 11+points<21: #si on tire un as et que nb points + 11 est inférieur à 21
+        if rand1==0 : #si on tire un as 
             if random.randint(1,2) == 1: #choisit aléatoirement une valeur pour l'as
                 valeur=1
             elif random.randint(1,2) == 2:
@@ -88,29 +98,15 @@ def newgame():
     points=0
     valeur=0
     points_croupier=0
-    print("Voulez vous relancer une partie ?")
-    rep1=input("Oui/non")
-    while rep1.lower()!="oui" and "non":
-        rep1=input("Oui/non")
 
-    if rep1.lower()=="oui":
-        print(saut) #Saute une ligne > pour la visibilité
-        print("Nouvelle partie, vous avez 0 points")
-        for i in range(2):
-            valeur=(tirage())
-            points+=valeur
-        rejeu()
+    print("Nouvelle partie, vous avez 0 points")
+    for i in range(2):
+        valeur=(tirage())
+        points+=valeur
+    rejeu()
 
-    elif rep1.lower()=="non":
-        print("Merci d'avoir joué.")
 
-def demande_rejeu():
-    rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON' ")
-    if rep.upper()=='OUI' :
-            print('On relance une partie alors!')
-            newgame()
-    elif rep.upper()=='NON':
-            print('A bientôt! :)')
+
 def rejeu():
     global points
     global sous
