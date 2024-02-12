@@ -6,8 +6,8 @@
 
 En cours:
 - Fonction Croupier (à partir de la fonction tirage)
-- Faire en sorte que le croupier puisse perdre si il dépasse 21 points
 - Interface (pygame)
+- Modelisations graphiques pour l'interface | Intro ✔️; Écran d'accueil ❌; Arrière Plan ❌; Écran de fin ❌; etc...
 
 Fait:
 - système de tirage de cartes
@@ -15,6 +15,7 @@ Fait:
 - faire un tour par tour
 - choix de relancer une partie & tirer une carte
 - Gagner dès les 2 premiers tirages
+- Faire en sorte que le croupier puisse perdre si il dépasse 21 points
 
 
 Liens utiles:
