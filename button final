@@ -51,22 +51,22 @@ run = True
 while run:
     timer.tick(fps)
 
-    my_button = Button('jouer', 200, 650)
+    image_jouer = Button('jouer', 200, 650)
 
-    if my_button.check_click():
+    if image_jouer.check_click():
 
 
-    my_button2 = Button('quitter', 960, 650)
+    image_quitter = Button('quitter', 960, 650)
 
-    if my_button2.check_click():
+    if image_quitter.check_click():
 
-    my_button3 = Button('rester', 960, 650)
+    image_rester = Button('rester', 960, 650)
 
-    if my_button3.check_click():
+    if image_rester.check_click():
 
-    my_button4 = Button('tirer', 960, 650)
+    image_tirer = Button('tirer', 960, 650)
 
-    if my_button4.check_click():
+    if image_tirer.check_click():
 
 
     for event in pygame.event.get():
