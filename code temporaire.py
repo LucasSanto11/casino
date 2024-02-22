@@ -24,7 +24,7 @@ cartes=['As', 'Deux', 'Trois', 'Quatre', 'Cinq', 'Six', 'Sept', 'Huit', 'Neuf', 
 symbole=[' de Pique', ' de Carreaux', ' de Coeur', " de Trèfle"]
 random.randint(0, 12)
 
-def demande_rejeu():
+def demande_retirage():
     rep=input("Voulez vous rejouer et tenter d'obtenir un gain plus conséquent :) ? Répondez par 'OUI' ou 'NON' ")
     if rep.upper()=='OUI' :
             print('On relance une partie alors!')
@@ -43,7 +43,7 @@ def tirage_croupier(): #le croupier tire
         print('')
     elif points_croupier==21:
         print('le croupier a obtenu 21 points, vous avez perdu votre mise ;(')
-        demande_rejeu()
+        demande_retirage()
 
     else: #Si le croupier a moins de 17 points, il tire une carte
         if rand1==0 : #si on tire un as 
@@ -103,11 +103,11 @@ def newgame():
     for i in range(2):
         valeur=(tirage())
         points+=valeur
-    rejeu()
+    retirage()
 
 
 
-def rejeu():
+def retirage():
     global points
     global sous
     print(saut) #Saute une ligne > pour la visibilité
@@ -120,30 +120,30 @@ def rejeu():
         valeur=(tirage())
         points+=valeur
         if points<21:
-            rejeu()
+            retirage()
         elif points>21:
             print("Vous avez", points, "points, vous avez perdu ;( !")
-            demande_rejeu()
+            demande_retirage()
         elif points==21:
             sous=2*sous
             print('Vous avez obtenu le score parfait! Vous avez maintenant une mise de',sous,';)')
-            demande_rejeu()
+            demande_retirage()
 
     else: #si le joueur décide de rester
         if points<points_croupier: #Si le joueur a moins de points que le croupier
              print ('Oh mince, vous avez perdu votre mise, vous n*avez plus rien !')
-             demande_rejeu()
+             demande_retirage()
         else : #Si le joueur a plus de points que le croupier
              sous=2*sous
              print('Bravo, vous avez gagné :) ! Votre mise est maintenant de', sous,'!')
-             demande_rejeu()
+             demande_retirage()
 
 
 #Lance la partie et tire deux cartes
 for i in range(2):
     valeur=(tirage())
     points+=valeur
-rejeu()
+retirage()
 
 #PARTIE PYGAME ////////////////////////
 import pygame
